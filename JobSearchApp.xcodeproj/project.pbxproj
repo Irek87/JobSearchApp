@@ -11,6 +11,13 @@
 		986BD0E52BA44249001BFEF4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD0E42BA44249001BFEF4 /* ContentView.swift */; };
 		986BD0E72BA4424A001BFEF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 986BD0E62BA4424A001BFEF4 /* Assets.xcassets */; };
 		986BD0EA2BA4424A001BFEF4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 986BD0E92BA4424A001BFEF4 /* Preview Assets.xcassets */; };
+		986BD0F22BA44963001BFEF4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 986BD0F12BA44963001BFEF4 /* Colors.xcassets */; };
+		986BD0F82BA4515E001BFEF4 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD0F72BA4515E001BFEF4 /* Typography.swift */; };
+		986BD0FC2BA4578E001BFEF4 /* EnterOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD0FB2BA4578E001BFEF4 /* EnterOneView.swift */; };
+		986BD0FE2BA4592D001BFEF4 /* IndividualAccountLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD0FD2BA4592D001BFEF4 /* IndividualAccountLoginView.swift */; };
+		986BD1002BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD0FF2BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift */; };
+		986BD1022BA5ABAD001BFEF4 /* EmployerAccountLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD1012BA5ABAD001BFEF4 /* EmployerAccountLoginView.swift */; };
+		986BD1052BA5AE16001BFEF4 /* JButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD1042BA5AE16001BFEF4 /* JButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,14 @@
 		986BD0E42BA44249001BFEF4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		986BD0E62BA4424A001BFEF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		986BD0E92BA4424A001BFEF4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		986BD0F12BA44963001BFEF4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		986BD0F72BA4515E001BFEF4 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		986BD0F92BA45603001BFEF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		986BD0FB2BA4578E001BFEF4 /* EnterOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterOneView.swift; sourceTree = "<group>"; };
+		986BD0FD2BA4592D001BFEF4 /* IndividualAccountLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAccountLoginView.swift; sourceTree = "<group>"; };
+		986BD0FF2BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAccountLoginViewModel.swift; sourceTree = "<group>"; };
+		986BD1012BA5ABAD001BFEF4 /* EmployerAccountLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerAccountLoginView.swift; sourceTree = "<group>"; };
+		986BD1042BA5AE16001BFEF4 /* JButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +66,11 @@
 		986BD0E12BA44249001BFEF4 /* JobSearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				986BD0F92BA45603001BFEF4 /* Info.plist */,
 				986BD0E22BA44249001BFEF4 /* JobSearchAppApp.swift */,
 				986BD0E42BA44249001BFEF4 /* ContentView.swift */,
-				986BD0E62BA4424A001BFEF4 /* Assets.xcassets */,
+				986BD0FA2BA4577D001BFEF4 /* Enter */,
+				986BD0F02BA44857001BFEF4 /* Resources */,
 				986BD0E82BA4424A001BFEF4 /* Preview Content */,
 			);
 			path = JobSearchApp;
@@ -65,6 +82,44 @@
 				986BD0E92BA4424A001BFEF4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		986BD0F02BA44857001BFEF4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				986BD1032BA5ADE9001BFEF4 /* Buttons */,
+				986BD0F62BA45149001BFEF4 /* Fonts */,
+				986BD0E62BA4424A001BFEF4 /* Assets.xcassets */,
+				986BD0F12BA44963001BFEF4 /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		986BD0F62BA45149001BFEF4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				986BD0F72BA4515E001BFEF4 /* Typography.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		986BD0FA2BA4577D001BFEF4 /* Enter */ = {
+			isa = PBXGroup;
+			children = (
+				986BD0FB2BA4578E001BFEF4 /* EnterOneView.swift */,
+				986BD0FD2BA4592D001BFEF4 /* IndividualAccountLoginView.swift */,
+				986BD0FF2BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift */,
+				986BD1012BA5ABAD001BFEF4 /* EmployerAccountLoginView.swift */,
+			);
+			path = Enter;
+			sourceTree = "<group>";
+		};
+		986BD1032BA5ADE9001BFEF4 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				986BD1042BA5AE16001BFEF4 /* JButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				986BD0F22BA44963001BFEF4 /* Colors.xcassets in Resources */,
 				986BD0EA2BA4424A001BFEF4 /* Preview Assets.xcassets in Resources */,
 				986BD0E72BA4424A001BFEF4 /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				986BD1022BA5ABAD001BFEF4 /* EmployerAccountLoginView.swift in Sources */,
+				986BD0FE2BA4592D001BFEF4 /* IndividualAccountLoginView.swift in Sources */,
 				986BD0E52BA44249001BFEF4 /* ContentView.swift in Sources */,
+				986BD0F82BA4515E001BFEF4 /* Typography.swift in Sources */,
+				986BD1002BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift in Sources */,
 				986BD0E32BA44249001BFEF4 /* JobSearchAppApp.swift in Sources */,
+				986BD1052BA5AE16001BFEF4 /* JButton.swift in Sources */,
+				986BD0FC2BA4578E001BFEF4 /* EnterOneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +337,12 @@
 				DEVELOPMENT_TEAM = 322ZC3L759;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JobSearchApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +367,12 @@
 				DEVELOPMENT_TEAM = 322ZC3L759;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JobSearchApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
