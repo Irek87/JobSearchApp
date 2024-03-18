@@ -18,6 +18,8 @@
 		986BD1002BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD0FF2BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift */; };
 		986BD1022BA5ABAD001BFEF4 /* EmployerAccountLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD1012BA5ABAD001BFEF4 /* EmployerAccountLoginView.swift */; };
 		986BD1052BA5AE16001BFEF4 /* JButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD1042BA5AE16001BFEF4 /* JButton.swift */; };
+		9870C7A02BA799CB0086088C /* EnterTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870C79F2BA799CB0086088C /* EnterTwoView.swift */; };
+		987BAAB22BA855950063CDC1 /* EnterTwoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987BAAB12BA855950063CDC1 /* EnterTwoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		986BD0FF2BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualAccountLoginViewModel.swift; sourceTree = "<group>"; };
 		986BD1012BA5ABAD001BFEF4 /* EmployerAccountLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerAccountLoginView.swift; sourceTree = "<group>"; };
 		986BD1042BA5AE16001BFEF4 /* JButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JButton.swift; sourceTree = "<group>"; };
+		9870C79F2BA799CB0086088C /* EnterTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterTwoView.swift; sourceTree = "<group>"; };
+		987BAAB12BA855950063CDC1 /* EnterTwoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterTwoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +110,8 @@
 		986BD0FA2BA4577D001BFEF4 /* Enter */ = {
 			isa = PBXGroup;
 			children = (
-				986BD0FB2BA4578E001BFEF4 /* EnterOneView.swift */,
-				986BD0FD2BA4592D001BFEF4 /* IndividualAccountLoginView.swift */,
-				986BD0FF2BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift */,
-				986BD1012BA5ABAD001BFEF4 /* EmployerAccountLoginView.swift */,
+				987BAAAF2BA8555F0063CDC1 /* EnterOne */,
+				987BAAB02BA855720063CDC1 /* EnterTwo */,
 			);
 			path = Enter;
 			sourceTree = "<group>";
@@ -120,6 +122,26 @@
 				986BD1042BA5AE16001BFEF4 /* JButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		987BAAAF2BA8555F0063CDC1 /* EnterOne */ = {
+			isa = PBXGroup;
+			children = (
+				986BD0FB2BA4578E001BFEF4 /* EnterOneView.swift */,
+				986BD0FD2BA4592D001BFEF4 /* IndividualAccountLoginView.swift */,
+				986BD0FF2BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift */,
+				986BD1012BA5ABAD001BFEF4 /* EmployerAccountLoginView.swift */,
+			);
+			path = EnterOne;
+			sourceTree = "<group>";
+		};
+		987BAAB02BA855720063CDC1 /* EnterTwo */ = {
+			isa = PBXGroup;
+			children = (
+				9870C79F2BA799CB0086088C /* EnterTwoView.swift */,
+				987BAAB12BA855950063CDC1 /* EnterTwoViewModel.swift */,
+			);
+			path = EnterTwo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +221,8 @@
 				986BD0F82BA4515E001BFEF4 /* Typography.swift in Sources */,
 				986BD1002BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift in Sources */,
 				986BD0E32BA44249001BFEF4 /* JobSearchAppApp.swift in Sources */,
+				987BAAB22BA855950063CDC1 /* EnterTwoViewModel.swift in Sources */,
+				9870C7A02BA799CB0086088C /* EnterTwoView.swift in Sources */,
 				986BD1052BA5AE16001BFEF4 /* JButton.swift in Sources */,
 				986BD0FC2BA4578E001BFEF4 /* EnterOneView.swift in Sources */,
 			);

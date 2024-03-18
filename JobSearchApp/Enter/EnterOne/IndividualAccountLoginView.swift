@@ -85,19 +85,23 @@ private extension IndividualAccountLoginView {
     }
 
     var buttons: some View {
-        HStack(spacing: 24) {
-            JButton(title: "Продолжить", style: .blueSmall) {
-                viewModel.validateEmail()
-            }
-            .disabled(viewModel.buttonIsDisabled)
+            HStack(spacing: 24) {
+                NavigationLink {
+                    EnterTwoView(email: viewModel.email)
+                } label: {
+                    JButton(title: "Продолжить", style: .blueSmall) {
+                        viewModel.validateEmail()
+                    }
+                    .disabled(viewModel.buttonIsDisabled)
+                }
 
-            Button {
+                Button {
 
-            } label: {
-                Text("Войти с паролем")
-                    .jType(style: .buttonText2, color: .jBlue)
+                } label: {
+                    Text("Войти с паролем")
+                        .jType(style: .buttonText2, color: .jBlue)
+                }
             }
-        }
     }
 }
 
