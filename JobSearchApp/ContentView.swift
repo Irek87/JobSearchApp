@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-//            Text("Main View")
-            EnterOneView()
+//            EnterOneView()
+            MainView()
                 .tabItem {
                     Label(
                         title: { Text("Поиск") },

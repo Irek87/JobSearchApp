@@ -9,7 +9,7 @@ import SwiftUI
 
 struct JButton: View {
     enum Style {
-        case blueBig, blueSmall, green
+        case blueBig, blueSmall, greenBig, greenSmall
     }
 
     private let title: String
@@ -51,7 +51,17 @@ struct JButton: View {
                         RoundedRectangle(cornerRadius: 8)
                             .fill(Color.jBlue)
                     )
-            case .green:
+            case .greenBig:
+                Text(title)
+                    .jType(style: .buttonText1, color: .jWhite)
+                    .multilineTextAlignment(.center)
+                    .frame(height: 48)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.jGreen)
+                    )
+            case .greenSmall:
                 Text(title)
                     .jType(style: .buttonText2, color: .jWhite)
                     .multilineTextAlignment(.center)
@@ -71,6 +81,7 @@ struct JButton: View {
     VStack(spacing: 16) {
         JButton(title: "Blue Big", style: .blueBig, action: {})
         JButton(title: "Blue small", style: .blueSmall, action: {})
-        JButton(title: "Green", style: .green, action: {})
+        JButton(title: "Green Big", style: .greenBig, action: {})
+        JButton(title: "Green small", style: .greenSmall, action: {})
     }
 }

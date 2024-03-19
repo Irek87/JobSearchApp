@@ -23,10 +23,12 @@
 		987BAAB52BA87EB70063CDC1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987BAAB42BA87EB70063CDC1 /* MainView.swift */; };
 		987BAAB72BA87ECC0063CDC1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987BAAB62BA87ECC0063CDC1 /* MainViewModel.swift */; };
 		987BAAB92BA89EA50063CDC1 /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987BAAB82BA89EA50063CDC1 /* RecommendationsView.swift */; };
-		987BAABB2BA8A6620063CDC1 /* VacancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987BAABA2BA8A6620063CDC1 /* VacancyView.swift */; };
+		987BAABB2BA8A6620063CDC1 /* VacancyPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987BAABA2BA8A6620063CDC1 /* VacancyPreview.swift */; };
 		987BAABE2BA8A6900063CDC1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987BAABD2BA8A6900063CDC1 /* Model.swift */; };
 		987BAAC12BA8A88A0063CDC1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987BAAC02BA8A88A0063CDC1 /* NetworkManager.swift */; };
-		987BAAC32BA8CCF60063CDC1 /* VacancyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987BAAC22BA8CCF60063CDC1 /* VacancyViewModel.swift */; };
+		987BAAC32BA8CCF60063CDC1 /* VacancyPreviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987BAAC22BA8CCF60063CDC1 /* VacancyPreviewModel.swift */; };
+		9894D4532BA9B387004C0595 /* VacancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9894D4522BA9B387004C0595 /* VacancyView.swift */; };
+		9894D4552BA9B5EF004C0595 /* VacancyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9894D4542BA9B5EF004C0595 /* VacancyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,10 +50,12 @@
 		987BAAB42BA87EB70063CDC1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		987BAAB62BA87ECC0063CDC1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		987BAAB82BA89EA50063CDC1 /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
-		987BAABA2BA8A6620063CDC1 /* VacancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyView.swift; sourceTree = "<group>"; };
+		987BAABA2BA8A6620063CDC1 /* VacancyPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyPreview.swift; sourceTree = "<group>"; };
 		987BAABD2BA8A6900063CDC1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		987BAAC02BA8A88A0063CDC1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		987BAAC22BA8CCF60063CDC1 /* VacancyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyViewModel.swift; sourceTree = "<group>"; };
+		987BAAC22BA8CCF60063CDC1 /* VacancyPreviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyPreviewModel.swift; sourceTree = "<group>"; };
+		9894D4522BA9B387004C0595 /* VacancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyView.swift; sourceTree = "<group>"; };
+		9894D4542BA9B5EF004C0595 /* VacancyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,9 +178,11 @@
 		987BAABC2BA8A6760063CDC1 /* Vacancy */ = {
 			isa = PBXGroup;
 			children = (
-				987BAABA2BA8A6620063CDC1 /* VacancyView.swift */,
-				987BAAC22BA8CCF60063CDC1 /* VacancyViewModel.swift */,
+				987BAABA2BA8A6620063CDC1 /* VacancyPreview.swift */,
+				987BAAC22BA8CCF60063CDC1 /* VacancyPreviewModel.swift */,
 				987BAABD2BA8A6900063CDC1 /* Model.swift */,
+				9894D4522BA9B387004C0595 /* VacancyView.swift */,
+				9894D4542BA9B5EF004C0595 /* VacancyViewModel.swift */,
 			);
 			path = Vacancy;
 			sourceTree = "<group>";
@@ -268,15 +274,17 @@
 				986BD1002BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift in Sources */,
 				987BAAB92BA89EA50063CDC1 /* RecommendationsView.swift in Sources */,
 				986BD0E32BA44249001BFEF4 /* JobSearchAppApp.swift in Sources */,
-				987BAAC32BA8CCF60063CDC1 /* VacancyViewModel.swift in Sources */,
+				9894D4532BA9B387004C0595 /* VacancyView.swift in Sources */,
+				987BAAC32BA8CCF60063CDC1 /* VacancyPreviewModel.swift in Sources */,
 				987BAAB22BA855950063CDC1 /* EnterTwoViewModel.swift in Sources */,
 				987BAABE2BA8A6900063CDC1 /* Model.swift in Sources */,
 				987BAAB52BA87EB70063CDC1 /* MainView.swift in Sources */,
 				9870C7A02BA799CB0086088C /* EnterTwoView.swift in Sources */,
-				987BAABB2BA8A6620063CDC1 /* VacancyView.swift in Sources */,
+				987BAABB2BA8A6620063CDC1 /* VacancyPreview.swift in Sources */,
 				986BD1052BA5AE16001BFEF4 /* JButton.swift in Sources */,
 				986BD0FC2BA4578E001BFEF4 /* EnterOneView.swift in Sources */,
 				987BAAB72BA87ECC0063CDC1 /* MainViewModel.swift in Sources */,
+				9894D4552BA9B5EF004C0595 /* VacancyViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

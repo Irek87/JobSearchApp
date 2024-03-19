@@ -18,7 +18,7 @@ struct EmployerAccountLoginView: View {
                     .jType(style: .text1, color: .jWhite)
             }
 
-            JButton(title: "Я ищу сотрудников", style: .green) {
+            JButton(title: "Я ищу сотрудников", style: .greenSmall) {
 
             }
         }

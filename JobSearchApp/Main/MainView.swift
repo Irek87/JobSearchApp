@@ -98,7 +98,7 @@ private extension MainView {
                 VStack(alignment: .leading, spacing: 8) {
                     ForEach(0..<3) { index in
                         if index < viewModel.vacancies.count {
-                            VacancyView(vacancy: viewModel.vacancies[index])
+                            VacancyPreview(vacancy: viewModel.vacancies[index])
                         }
                     }
                 }
