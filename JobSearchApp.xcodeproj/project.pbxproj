@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9822C73A2BAA14EA0065C5A2 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9822C7392BAA14EA0065C5A2 /* FavoritesView.swift */; };
 		986BD0E32BA44249001BFEF4 /* JobSearchAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD0E22BA44249001BFEF4 /* JobSearchAppApp.swift */; };
 		986BD0E52BA44249001BFEF4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD0E42BA44249001BFEF4 /* ContentView.swift */; };
 		986BD0E72BA4424A001BFEF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 986BD0E62BA4424A001BFEF4 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9822C7392BAA14EA0065C5A2 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		986BD0DF2BA44249001BFEF4 /* JobSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		986BD0E22BA44249001BFEF4 /* JobSearchAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchAppApp.swift; sourceTree = "<group>"; };
 		986BD0E42BA44249001BFEF4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9822C7382BAA14C30065C5A2 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				9822C7392BAA14EA0065C5A2 /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		986BD0D62BA44249001BFEF4 = {
 			isa = PBXGroup;
 			children = (
@@ -88,14 +98,16 @@
 		986BD0E12BA44249001BFEF4 /* JobSearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				986BD0E22BA44249001BFEF4 /* JobSearchAppApp.swift */,
+				986BD0E42BA44249001BFEF4 /* ContentView.swift */,
 				986BD0FA2BA4577D001BFEF4 /* Enter */,
 				987BAAB32BA87E730063CDC1 /* Main */,
+				9822C7382BAA14C30065C5A2 /* Favorites */,
 				987BAABF2BA8A86E0063CDC1 /* Services */,
+				98F8EBBC2BAAF61D00180980 /* Model */,
 				986BD0F02BA44857001BFEF4 /* Resources */,
 				986BD0E82BA4424A001BFEF4 /* Preview Content */,
 				986BD0F92BA45603001BFEF4 /* Info.plist */,
-				986BD0E22BA44249001BFEF4 /* JobSearchAppApp.swift */,
-				986BD0E42BA44249001BFEF4 /* ContentView.swift */,
 			);
 			path = JobSearchApp;
 			sourceTree = "<group>";
@@ -180,7 +192,6 @@
 			children = (
 				987BAABA2BA8A6620063CDC1 /* VacancyPreview.swift */,
 				987BAAC22BA8CCF60063CDC1 /* VacancyPreviewModel.swift */,
-				987BAABD2BA8A6900063CDC1 /* Model.swift */,
 				9894D4522BA9B387004C0595 /* VacancyView.swift */,
 				9894D4542BA9B5EF004C0595 /* VacancyViewModel.swift */,
 			);
@@ -193,6 +204,14 @@
 				987BAAC02BA8A88A0063CDC1 /* NetworkManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		98F8EBBC2BAAF61D00180980 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				987BAABD2BA8A6900063CDC1 /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9822C73A2BAA14EA0065C5A2 /* FavoritesView.swift in Sources */,
 				986BD1022BA5ABAD001BFEF4 /* EmployerAccountLoginView.swift in Sources */,
 				986BD0FE2BA4592D001BFEF4 /* IndividualAccountLoginView.swift in Sources */,
 				986BD0E52BA44249001BFEF4 /* ContentView.swift in Sources */,

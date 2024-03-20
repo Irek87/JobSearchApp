@@ -31,4 +31,5 @@ struct EnterOneView: View {
 
 #Preview {
     EnterOneView()
+//        .environmentObject(Storage())
 }

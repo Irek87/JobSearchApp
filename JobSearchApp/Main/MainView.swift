@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject private var storage: Storage
     @StateObject private var viewModel = MainViewModel()
 
     var body: some View {
@@ -16,9 +17,6 @@ struct MainView: View {
                 topBlock
                 vacancies
             }
-        }
-        .task {
-            await viewModel.getVacancies()
         }
         .preferredColorScheme(.dark)
     }
@@ -81,14 +79,6 @@ private extension MainView {
         )
     }
 
-    var recommendations: some View {
-        HStack(spacing: 8) {
-            Text("Placeholder")
-            Text("Placeholder")
-            Text("Placeholder")
-        }
-    }
-
     var vacancies: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Вакансии для вас")
@@ -97,13 +87,13 @@ private extension MainView {
             VStack(alignment: .leading, spacing: 24) {
                 VStack(alignment: .leading, spacing: 8) {
                     ForEach(0..<3) { index in
-                        if index < viewModel.vacancies.count {
-                            VacancyPreview(vacancy: viewModel.vacancies[index])
+                        if index < storage.vacancies.count {
+                            VacancyPreview(vacancy: storage.vacancies[index], storage: storage)
                         }
                     }
                 }
 
-                JButton(title: "Ещё \(viewModel.vacancies.count) вакансий", style: .blueBig) {}
+                JButton(title: "Ещё \(storage.vacancies.count) вакансий", style: .blueBig) {}
             }
         }
         .padding(.horizontal)
@@ -112,4 +102,5 @@ private extension MainView {
 
 #Preview {
     MainView()
+        .environmentObject(Storage())
 }

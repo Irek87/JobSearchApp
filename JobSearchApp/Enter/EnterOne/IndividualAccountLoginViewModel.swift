@@ -12,6 +12,7 @@ final class IndividualAccountLoginViewModel: ObservableObject {
         didSet { isWrongFormat = false }
     }
     @Published var isWrongFormat: Bool = false
+    @Published var isCorrectFormat: Bool = false
 
     var buttonIsDisabled: Bool { email.isEmpty }
     var strokeColor: Color { isWrongFormat ? Color.jRed : Color.clear }
@@ -23,8 +24,10 @@ final class IndividualAccountLoginViewModel: ObservableObject {
     func validateEmail() {
         if validate(email) {
             isWrongFormat = false
+            isCorrectFormat = true
         } else {
             isWrongFormat = true
+            isCorrectFormat = false
         }
     }
 

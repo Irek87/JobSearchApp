@@ -8,11 +8,20 @@
 import SwiftUI
 
 final class VacancyPreviewModel: ObservableObject {
-    @Published var vacancy: Vacancy
+    @Published var vacancy: Vacancy {
+        didSet {
+            if let index = storage.vacancies.firstIndex(where: { $0.id == vacancy.id }) {
+                storage.vacancies[index] = vacancy
+            }
+        }
+    }
+    
+    let storage: Storage
     var heartIcon: Image { vacancy.isFavorite ? Image(.heartFill) : Image(.heart) }
 
-    init(vacancy: Vacancy) {
+    init(vacancy: Vacancy, storage: Storage) {
         self.vacancy = vacancy
+        self.storage = storage
     }
 
     func getPublishedDate() -> String {

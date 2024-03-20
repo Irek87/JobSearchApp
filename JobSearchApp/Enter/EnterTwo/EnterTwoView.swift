@@ -12,6 +12,7 @@ struct EnterTwoView: View {
         case first, second, third, fourth
     }
 
+    @EnvironmentObject private var storage: Storage
     @StateObject private var viewModel: EnterTwoViewModel
     @FocusState var focusedField: InputField?
 
@@ -30,6 +31,7 @@ struct EnterTwoView: View {
             inputFields
 
             JButton(title: "Подтвердить", style: .blueBig) {
+                viewModel.logIn(storage)
             }
             .disabled(viewModel.isButtonDisabled)
         }
@@ -71,4 +73,5 @@ struct EnterTwoView: View {
 
 #Preview {
     EnterTwoView(email: "example@mail.com")
+        .environmentObject(Storage())
 }

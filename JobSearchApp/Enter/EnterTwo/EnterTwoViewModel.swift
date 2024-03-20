@@ -38,6 +38,10 @@ final class EnterTwoViewModel: ObservableObject {
             break
         }
     }
+
+    func logIn(_ storage: Storage) {
+        storage.isLoggedIn = true
+    }
 }
 
 struct JDigit: Identifiable {

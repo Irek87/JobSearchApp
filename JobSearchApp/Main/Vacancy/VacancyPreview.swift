@@ -10,8 +10,8 @@ import SwiftUI
 struct VacancyPreview: View {
     @StateObject private var viewModel: VacancyPreviewModel
 
-    init(vacancy: Vacancy) {
-        _viewModel = StateObject(wrappedValue: VacancyPreviewModel(vacancy: vacancy))
+    init(vacancy: Vacancy, storage: Storage) {
+        _viewModel = StateObject(wrappedValue: VacancyPreviewModel(vacancy: vacancy, storage: storage))
     }
 
     var body: some View {

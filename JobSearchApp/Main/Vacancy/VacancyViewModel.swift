@@ -8,7 +8,14 @@
 import SwiftUI
 
 final class VacancyViewModel: ObservableObject {
-    @Published var vacancy: Vacancy
+    @Published var vacancy: Vacancy //{
+//        didSet {
+//            if let index = storage.vacancies.firstIndex(where: { $0.id == vacancy.id }) {
+//                storage.vacancies[index] = vacancy
+//            }
+//        }
+//    }
+    
     var heartIcon: Image { vacancy.isFavorite ? Image(.heartFill) : Image(.heart) }
     var address: String { "\(vacancy.address.town), \(vacancy.address.street), \(vacancy.address.house)" }
 
