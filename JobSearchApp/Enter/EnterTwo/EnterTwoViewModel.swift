@@ -40,7 +40,7 @@ final class EnterTwoViewModel: ObservableObject {
     }
 
     func logIn(_ storage: Storage) {
-        storage.isLoggedIn = true
+        storage.isNotLoggedIn = false
     }
 }
 
