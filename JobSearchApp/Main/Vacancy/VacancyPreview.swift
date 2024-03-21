@@ -11,19 +11,17 @@ struct VacancyPreview: View {
     @EnvironmentObject private var storage: Storage
 
     let vacancy: Vacancy
+    let isLink: Bool
     private var heartIcon: Image { vacancy.isFavorite ? Image(.heartFill) : Image(.heart) }
+
+    init(vacancy: Vacancy, isLink: Bool = false) {
+        self.vacancy = vacancy
+        self.isLink = isLink
+    }
 
     var body: some View {
         VStack {
-//            NavigationLink {
-//                VacancyView(vacancy: viewModel.vacancy)
-//            } label: {
-                HStack(alignment: .top) {
-                    texts
-                    Spacer()
-                    heartButton
-                }
-//            }
+            getMainSection()
 
             JButton(title: "Откликнуться", style: .greenSmall) {}
         }
@@ -32,6 +30,27 @@ struct VacancyPreview: View {
             RoundedRectangle(cornerRadius: 8)
                 .fill(Color.jGrey1)
         )
+    }
+
+    @ViewBuilder
+    func getMainSection() -> some View {
+        if isLink {
+            NavigationLink {
+                VacancyView(vacancy: vacancy)
+            } label: {
+                HStack(alignment: .top) {
+                    texts
+                    Spacer()
+                    heartButton
+                }
+            }
+        } else {
+            HStack(alignment: .top) {
+                texts
+                Spacer()
+                heartButton
+            }
+        }
     }
 }
 

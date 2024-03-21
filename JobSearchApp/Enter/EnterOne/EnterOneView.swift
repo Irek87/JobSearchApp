@@ -24,6 +24,7 @@ struct EnterOneView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .padding(.top, 32)
             .padding(.horizontal)
+            .background(.clear)
             .preferredColorScheme(.dark)
         }
     }
