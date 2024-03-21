@@ -18,6 +18,7 @@ struct MainView: View {
                 vacancies
             }
         }
+        .scrollIndicators(.hidden)
         .preferredColorScheme(.dark)
     }
 }
@@ -93,7 +94,7 @@ private extension MainView {
                     }
                 }
 
-                JButton(title: "Ещё \(storage.vacancies.count) вакансий", style: .blueBig) {}
+                JButton(title: "Ещё \(storage.vacancies.count.vacancies())", style: .blueBig) {}
             }
         }
         .padding(.horizontal)

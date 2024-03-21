@@ -9,9 +9,7 @@ import SwiftUI
 
 final class Storage: ObservableObject {
     @Published var isNotLoggedIn: Bool = true
-    @Published var vacancies: [Vacancy] = .init() {
-        didSet { print("Storage changed") }
-    }
+    @Published var vacancies: [Vacancy] = .init()
 }
 
 @main

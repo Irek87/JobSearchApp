@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		980E4DAC2BACB91000EC6EBE /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980E4DAB2BACB91000EC6EBE /* Int+Extension.swift */; };
+		980E4DAF2BACBB8200EC6EBE /* MokVacancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980E4DAE2BACBB8200EC6EBE /* MokVacancy.swift */; };
 		9822C73A2BAA14EA0065C5A2 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9822C7392BAA14EA0065C5A2 /* FavoritesView.swift */; };
 		986BD0E32BA44249001BFEF4 /* JobSearchAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD0E22BA44249001BFEF4 /* JobSearchAppApp.swift */; };
 		986BD0E52BA44249001BFEF4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986BD0E42BA44249001BFEF4 /* ContentView.swift */; };
@@ -28,10 +30,11 @@
 		987BAABE2BA8A6900063CDC1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987BAABD2BA8A6900063CDC1 /* Model.swift */; };
 		987BAAC12BA8A88A0063CDC1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987BAAC02BA8A88A0063CDC1 /* NetworkManager.swift */; };
 		9894D4532BA9B387004C0595 /* VacancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9894D4522BA9B387004C0595 /* VacancyView.swift */; };
-		9894D4552BA9B5EF004C0595 /* VacancyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9894D4542BA9B5EF004C0595 /* VacancyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		980E4DAB2BACB91000EC6EBE /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		980E4DAE2BACBB8200EC6EBE /* MokVacancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MokVacancy.swift; sourceTree = "<group>"; };
 		9822C7392BAA14EA0065C5A2 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		986BD0DF2BA44249001BFEF4 /* JobSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		986BD0E22BA44249001BFEF4 /* JobSearchAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchAppApp.swift; sourceTree = "<group>"; };
@@ -55,7 +58,6 @@
 		987BAABD2BA8A6900063CDC1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		987BAAC02BA8A88A0063CDC1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9894D4522BA9B387004C0595 /* VacancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyView.swift; sourceTree = "<group>"; };
-		9894D4542BA9B5EF004C0595 /* VacancyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		980E4DAA2BACB8E600EC6EBE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				980E4DAB2BACB91000EC6EBE /* Int+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		980E4DAD2BACBB6700EC6EBE /* MokData */ = {
+			isa = PBXGroup;
+			children = (
+				980E4DAE2BACBB8200EC6EBE /* MokVacancy.swift */,
+			);
+			path = MokData;
+			sourceTree = "<group>";
+		};
 		9822C7382BAA14C30065C5A2 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +121,7 @@
 				9822C7382BAA14C30065C5A2 /* Favorites */,
 				987BAABF2BA8A86E0063CDC1 /* Services */,
 				98F8EBBC2BAAF61D00180980 /* Model */,
+				980E4DAA2BACB8E600EC6EBE /* Extensions */,
 				986BD0F02BA44857001BFEF4 /* Resources */,
 				986BD0E82BA4424A001BFEF4 /* Preview Content */,
 				986BD0F92BA45603001BFEF4 /* Info.plist */,
@@ -121,6 +140,7 @@
 		986BD0F02BA44857001BFEF4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				980E4DAD2BACBB6700EC6EBE /* MokData */,
 				986BD1032BA5ADE9001BFEF4 /* Buttons */,
 				986BD0F62BA45149001BFEF4 /* Fonts */,
 				986BD0E62BA4424A001BFEF4 /* Assets.xcassets */,
@@ -190,7 +210,6 @@
 			children = (
 				987BAABA2BA8A6620063CDC1 /* VacancyPreview.swift */,
 				9894D4522BA9B387004C0595 /* VacancyView.swift */,
-				9894D4542BA9B5EF004C0595 /* VacancyViewModel.swift */,
 			);
 			path = Vacancy;
 			sourceTree = "<group>";
@@ -282,11 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				980E4DAF2BACBB8200EC6EBE /* MokVacancy.swift in Sources */,
 				9822C73A2BAA14EA0065C5A2 /* FavoritesView.swift in Sources */,
 				986BD1022BA5ABAD001BFEF4 /* EmployerAccountLoginView.swift in Sources */,
 				986BD0FE2BA4592D001BFEF4 /* IndividualAccountLoginView.swift in Sources */,
 				986BD0E52BA44249001BFEF4 /* ContentView.swift in Sources */,
 				986BD0F82BA4515E001BFEF4 /* Typography.swift in Sources */,
+				980E4DAC2BACB91000EC6EBE /* Int+Extension.swift in Sources */,
 				987BAAC12BA8A88A0063CDC1 /* NetworkManager.swift in Sources */,
 				986BD1002BA4658A001BFEF4 /* IndividualAccountLoginViewModel.swift in Sources */,
 				987BAAB92BA89EA50063CDC1 /* RecommendationsView.swift in Sources */,
@@ -300,7 +321,6 @@
 				986BD1052BA5AE16001BFEF4 /* JButton.swift in Sources */,
 				986BD0FC2BA4578E001BFEF4 /* EnterOneView.swift in Sources */,
 				987BAAB72BA87ECC0063CDC1 /* MainViewModel.swift in Sources */,
-				9894D4552BA9B5EF004C0595 /* VacancyViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

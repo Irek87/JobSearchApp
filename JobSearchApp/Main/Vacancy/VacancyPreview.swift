@@ -37,6 +37,7 @@ struct VacancyPreview: View {
         if isLink {
             NavigationLink {
                 VacancyView(vacancy: vacancy)
+                    .environmentObject(storage)
             } label: {
                 HStack(alignment: .top) {
                     texts
@@ -58,7 +59,7 @@ private extension VacancyPreview {
     var texts: some View {
         VStack(alignment: .leading, spacing: 10) {
             if let lookingNumber = vacancy.lookingNumber {
-                Text("Сейчас просматривает \(lookingNumber) человек")
+                Text("Сейчас просматривает \(lookingNumber.people())")
                     .jType(style: .text1, color: .jGreen)
             }
 

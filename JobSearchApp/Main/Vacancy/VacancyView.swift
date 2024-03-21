@@ -9,16 +9,17 @@ import SwiftUI
 
 struct VacancyView: View {
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var viewModel: VacancyViewModel
+    @EnvironmentObject private var storage: Storage
 
-    init(vacancy: Vacancy) {
-        _viewModel = StateObject(wrappedValue: VacancyViewModel(vacancy: vacancy))
-    }
+    let vacancy: Vacancy
+    private var heartIcon: Image { vacancy.isFavorite ? Image(.heartFill) : Image(.heart) }
+    private var address: String { "\(vacancy.address.town), \(vacancy.address.street), \(vacancy.address.house)" }
 
     var body: some View {
         ScrollView {
             getContent()
         }
+        .scrollIndicators(.hidden)
         .preferredColorScheme(.dark)
         .navigationBarBackButtonHidden()
         .toolbar {
@@ -107,24 +108,24 @@ private extension VacancyView {
             }
 
             Button {
-                viewModel.vacancy.isFavorite.toggle()
+                updateVacancy()
             } label: {
-                viewModel.heartIcon
+                heartIcon
             }
         }
     }
 
     var topTexts: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text(viewModel.vacancy.title)
+            Text(vacancy.title)
                 .jType(style: .title1, color: .jWhite)
-            Text(viewModel.vacancy.salary.full)
+            Text(vacancy.salary.full)
                 .jType(style: .text1, color: .jWhite)
 
             VStack(alignment: .leading, spacing: 16) {
-                Text("Требуемый \(viewModel.vacancy.experience.previewText.lowercased())")
+                Text("Требуемый \(vacancy.experience.previewText.lowercased())")
                     .jType(style: .text1, color: .jWhite)
-                Text(viewModel.getSchedules())
+                Text(getSchedules())
                     .jType(style: .text1, color: .jWhite)
             }
         }
@@ -132,9 +133,9 @@ private extension VacancyView {
 
     var viewsAndApplications: some View {
         HStack {
-            if let appliedNumber = viewModel.vacancy.appliedNumber {
+            if let appliedNumber = vacancy.appliedNumber {
                 HStack(alignment: .top) {
-                    Text("\(appliedNumber) уже человек откликнулось")
+                    Text("\(appliedNumber.people()) уже откликнулось")
                         .jType(style: .text1, color: .jWhite)
                     
                     Spacer()
@@ -152,9 +153,9 @@ private extension VacancyView {
                 )
             }
 
-            if let lookingNumber = viewModel.vacancy.lookingNumber {
+            if let lookingNumber = vacancy.lookingNumber {
                 HStack(alignment: .top) {
-                    Text("\(lookingNumber) человека сейчас смотрят")
+                    Text("\(lookingNumber.people()) сейчас смотрят")
                         .jType(style: .text1, color: .jWhite)
 
                     Spacer()
@@ -177,7 +178,7 @@ private extension VacancyView {
     var companyInfo: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
-                Text(viewModel.vacancy.company)
+                Text(vacancy.company)
                     .jType(style: .title3, color: .jWhite)
 
                 Image(.checkMark)
@@ -192,7 +193,7 @@ private extension VacancyView {
                 .resizable()
                 .scaledToFit()
 
-            Text(viewModel.address)
+            Text(address)
                 .jType(style: .text1, color: .jWhite)
         }
         .padding(.vertical, 12)
@@ -203,22 +204,14 @@ private extension VacancyView {
         )
     }
 
-    @ViewBuilder
-    func getCompanyDescription() -> some View {
-        if let description = viewModel.vacancy.description {
-            Text(description)
-                .jType(style: .text1, color: .jWhite)
-        }
-    }
-
     var responsibilities: some View {
-        Text(viewModel.vacancy.responsibilities)
+        Text(vacancy.responsibilities)
             .jType(style: .text1, color: .jWhite)
     }
 
     var questions: some View {
         VStack(alignment: .leading, spacing: 8) {
-            ForEach(viewModel.vacancy.questions, id: \.self) { question in
+            ForEach(vacancy.questions, id: \.self) { question in
                 Text(question)
                     .jType(style: .title4, color: .jWhite)
                     .padding(.horizontal, 12)
@@ -230,43 +223,26 @@ private extension VacancyView {
             }
         }
     }
-}
 
-// TODO: remove mok
-let mokVacancy = Vacancy(
-    id: "e29dc698bb50",
-    lookingNumber: 2,
-    title: "UI/UX дизайнер",
-    address: Address(
-        town: "Минск",
-        street: "лица Бирюзова",
-        house: "4/5"
-    ),
-    company: "Мобирикс",
-    experience: Experience(
-        previewText: "Опыт от 1 до 3 леt",
-        text: "1–3 годa"
-    ),
-    publishedDate: "2024-02-20",
-    isFavorite: false,
-    salary: Salary(
-        short: nil,
-        full: "Уровень дохода не указан"
-    ),
-    schedules: [
-        "полная занятость",
-        "полный день"
-      ],
-    appliedNumber: 147,
-    description: "Мы ищем специалиста на позицию UX/UI Designer, который вместе с коллегами будет заниматься проектированием пользовательских интерфейсов внутренних и внешних продуктов компании",
-    responsibilities: "- проектирование пользовательских сценариев и создание прототипов;\n- разработка интерфейсов для продуктов компании (Web+App);\n- работа над созданием и улучшением Дизайн-системы;\n- взаимодействие с командами frontend-разработки;\n- контроль качества внедрения дизайна;\n- ситуативно: создание презентаций и других материалов на основе фирменного стиля компании",
-    questions: [
-        "Где располагается место работы?",
-        "Какой график работы?",
-        "Вакансия открыта?",
-        "Какая оплата труда?"
-      ]
-)
+    @ViewBuilder
+    func getCompanyDescription() -> some View {
+        if let description = vacancy.description {
+            Text(description)
+                .jType(style: .text1, color: .jWhite)
+        }
+    }
+
+    func updateVacancy() {
+        if let index = storage.vacancies.firstIndex(of: vacancy) {
+            storage.vacancies[index].isFavorite.toggle()
+        }
+    }
+
+    func getSchedules() -> String {
+        let resultString = vacancy.schedules.map { $0 }.joined(separator: ", ")
+        return resultString.prefix(1).capitalized + resultString.dropFirst()
+    }
+}
 
 #Preview {
     NavigationStack {

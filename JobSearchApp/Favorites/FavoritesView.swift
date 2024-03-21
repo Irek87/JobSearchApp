@@ -30,7 +30,7 @@ private extension FavoritesView {
             Text("Избранное")
                 .jType(style: .title2, color: .jWhite)
 
-            Text("\(storage.vacancies.filter{$0.isFavorite}.count) вакансий")
+            Text("\(storage.vacancies.filter{$0.isFavorite}.count.vacancies())")
                 .jType(style: .text1, color: .jGrey3)
         }
     }
