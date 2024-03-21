@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct VacancyPreview: View {
-    @StateObject private var viewModel: VacancyPreviewModel
+    @EnvironmentObject private var storage: Storage
 
-    init(vacancy: Vacancy, storage: Storage) {
-        _viewModel = StateObject(wrappedValue: VacancyPreviewModel(vacancy: vacancy, storage: storage))
-    }
+    let vacancy: Vacancy
+    private var heartIcon: Image { vacancy.isFavorite ? Image(.heartFill) : Image(.heart) }
 
     var body: some View {
         VStack {
@@ -39,20 +38,20 @@ struct VacancyPreview: View {
 private extension VacancyPreview {
     var texts: some View {
         VStack(alignment: .leading, spacing: 10) {
-            if let lookingNumber = viewModel.vacancy.lookingNumber {
+            if let lookingNumber = vacancy.lookingNumber {
                 Text("Сейчас просматривает \(lookingNumber) человек")
                     .jType(style: .text1, color: .jGreen)
             }
 
-            Text(viewModel.vacancy.title)
+            Text(vacancy.title)
                 .jType(style: .title3, color: .jWhite)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(viewModel.vacancy.address.town)
+                Text(vacancy.address.town)
                     .jType(style: .text1, color: .jWhite)
 
                 HStack(spacing: 8) {
-                    Text(viewModel.vacancy.company)
+                    Text(vacancy.company)
                         .jType(style: .text1, color: .jGreen)
 
                     Image(.checkMark)
@@ -72,24 +71,43 @@ private extension VacancyPreview {
                     .frame(width: 16, height: 16)
                     .foregroundStyle(Color.jWhite)
 
-                Text(viewModel.vacancy.experience.previewText)
+                Text(vacancy.experience.previewText)
                     .jType(style: .text1, color: .jWhite)
             }
 
-            Text("Опубликовано \(viewModel.getPublishedDate())")
+            Text("Опубликовано \(getPublishedDate())")
                 .jType(style: .text1, color: .jGrey3)
         }
     }
 
     var heartButton: some View {
         Button {
-            viewModel.vacancy.isFavorite.toggle()
+            updateVacancy()
         } label: {
-            viewModel.heartIcon
+            heartIcon
+        }
+    }
+
+    private func updateVacancy() {
+        if let index = storage.vacancies.firstIndex(of: vacancy) {
+            storage.vacancies[index].isFavorite.toggle()
+        }
+    }
+
+    private func getPublishedDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let date = dateFormatter.date(from: vacancy.publishedDate) {
+            dateFormatter.locale = Locale(identifier: "ru_RU")
+            dateFormatter.dateFormat = "dd MMMM"
+            let frenchDate = dateFormatter.string(from: date)
+            return frenchDate
+        } else {
+            return "дата неизвестна"
         }
     }
 }
 
-//#Preview {
-//    VacancyView()
-//}
+#Preview {
+    VacancyPreview(vacancy: mokVacancy)
+}

@@ -88,7 +88,7 @@ private extension MainView {
                 VStack(alignment: .leading, spacing: 8) {
                     ForEach(0..<3) { index in
                         if index < storage.vacancies.count {
-                            VacancyPreview(vacancy: storage.vacancies[index], storage: storage)
+                            VacancyPreview(vacancy: storage.vacancies[index])
                         }
                     }
                 }

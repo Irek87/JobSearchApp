@@ -39,7 +39,7 @@ private extension FavoritesView {
         VStack(alignment: .leading, spacing: 8) {
             ForEach(storage.vacancies, id: \.id) { vacancy in
                 if vacancy.isFavorite {
-                    VacancyPreview(vacancy: vacancy, storage: storage)
+                    VacancyPreview(vacancy: vacancy)
                 }
             }
         }

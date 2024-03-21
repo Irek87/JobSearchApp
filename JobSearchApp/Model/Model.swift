@@ -23,7 +23,7 @@ struct MokButton: Codable {
     let text: String
 }
 
-struct Vacancy: Codable {
+struct Vacancy: Codable, Equatable {
     let id: String
     let lookingNumber: Int?
     let title: String
@@ -40,15 +40,15 @@ struct Vacancy: Codable {
     let questions: [String]
 }
 
-struct Address: Codable {
+struct Address: Codable, Equatable {
     let town, street, house: String
 }
 
-struct Experience: Codable {
+struct Experience: Codable, Equatable {
     let previewText, text: String
 }
 
-struct Salary: Codable {
+struct Salary: Codable, Equatable {
     let short: String?
     let full: String
 }
